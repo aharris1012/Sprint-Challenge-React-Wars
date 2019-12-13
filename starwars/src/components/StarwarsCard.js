@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import Axios from "axios";
+import {Card,Name,Text,NiceDiv} from "reactstrap";
 
 
 
@@ -11,8 +12,14 @@ export default function StarwarsCard(){
 
 useEffect(()=>{
     Axios.get('https://swapi.co/api/people/')
-    .then ((result)=>{
-        const People = result.data.results;
+    .then ((response)=>{
+        console.log (response);
+        const People = response.data.results;
+       
+       }) 
+       .catch (err =>{
+        console.log(error)
+        
         setStarPeople(People);
     })
 },[])
@@ -21,15 +28,18 @@ return(
     <div>
         {Starpeople.map(per =>{
 return
-<NiceDiv>
-    <Card>
-        <Name>{per.name}</Name>
-        <Text>BORN IN : {per.birth_year}</Text>
-        <Text>HE? SHE? OR WHAT?: {per.gender}</Text>
-        <Text>FROM: {per.homeworld}</Text>
-        <Text>{per.films}</Text>
-    </Card>
-</NiceDiv>
+       <starPeople
+       name={per.name}
+       birth={per.birth_year}
+       gender={per.gender}
+       world={per.homeworld}
+       films={per.films}
+
+
+
+
+
+/>
         })}
     </div>
 )
