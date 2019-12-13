@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import styled from "styled-components";
 import Axios from "axios";
 import {Card,Name,Text,NiceDiv} from "reactstrap";
+import starPeople from "./starPeople"
 
 
 

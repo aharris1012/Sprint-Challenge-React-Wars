@@ -1,4 +1,5 @@
 import React from "react";
+import StarwarsCard from "./StarwarsCard"
 
 const starPeople = props => {
 
