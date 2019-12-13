@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import { startPeople} from "./components/starPeople";
+import { StarPeople} from "./StarPeople";
 
 
 const axios = require('axios');
@@ -36,7 +36,7 @@ if (!characters) return <h3>Loading...</h3>;
         characters.map((item) => {
           console.log(item)
           return (
-            <starPeople person={item}/>
+            <StarPeople person={item}/>
           );
         })
       }
